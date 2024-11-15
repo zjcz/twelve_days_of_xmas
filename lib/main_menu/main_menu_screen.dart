@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:twelve_days_of_xmas/route_config.dart';
 import '../audio/audio_manager.dart';
 import '../service_locator.dart';
 import '../settings/settings_controller.dart';
@@ -36,7 +37,7 @@ class MainMenuScreen extends ConsumerWidget {
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 500),
                   child: const Text(
-                    'A Flutter game template.',
+                    'By Happy Bunny Software',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Press Start 2P',
@@ -55,7 +56,7 @@ class MainMenuScreen extends ConsumerWidget {
             GameButton(
               onPressed: () {
                 audioController.playSfx(SfxType.buttonTap);
-                GoRouter.of(context).go('/play');
+                GoRouter.of(context).go(RouteDefs.play);
               },
               child: const Text('Play'),
             ),

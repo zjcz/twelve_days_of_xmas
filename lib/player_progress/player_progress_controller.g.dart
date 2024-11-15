@@ -1,29 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'high_scores_controller.dart';
+part of 'player_progress_controller.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$highScoresControllerHash() =>
-    r'b6cebacd5c00e20e78df3d14b82ae29a6e1733b6';
+String _$playerProgressControllerHash() =>
+    r'e5c43581df41edea43307fee15ed8dad9bcbc670';
 
 /// Encapsulates the player's high scores.
 ///
-/// Copied from [HighScoresController].
-@ProviderFor(HighScoresController)
-final highScoresControllerProvider =
-    AutoDisposeAsyncNotifierProvider<HighScoresController, List<int>>.internal(
-  HighScoresController.new,
-  name: r'highScoresControllerProvider',
+/// Copied from [PlayerProgressController].
+@ProviderFor(PlayerProgressController)
+final playerProgressControllerProvider = AutoDisposeAsyncNotifierProvider<
+    PlayerProgressController, List<int>>.internal(
+  PlayerProgressController.new,
+  name: r'playerProgressControllerProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$highScoresControllerHash,
+      : _$playerProgressControllerHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$HighScoresController = AutoDisposeAsyncNotifier<List<int>>;
+typedef _$PlayerProgressController = AutoDisposeAsyncNotifier<List<int>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

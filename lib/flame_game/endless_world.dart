@@ -7,7 +7,7 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
 import '../level_selection/levels.dart';
-import '../high_scores/high_scores_controller.dart';
+import '../player_progress/player_progress_controller.dart';
 import 'components/obstacle.dart';
 import 'components/player.dart';
 import 'components/point.dart';
@@ -28,16 +28,16 @@ import 'game_screen.dart';
 class EndlessWorld extends World with TapCallbacks, HasGameReference {
   EndlessWorld({
     required this.level,
-    required this.highScores,
+    required this.playerProgress,
     Random? random,
   }) : _random = random ?? Random();
 
   /// The properties of the current level.
   final GameLevel level;
 
-  /// Used to see what the current high score of the player is and to update the
+  /// Used to see what the current progress of the player is and to update the
   /// progress if a level is finished.
-  final HighScoresController highScores;
+  final PlayerProgressController playerProgress;
 
   /// The speed is used for determining how fast the background should pass by
   /// and how fast the enemies and obstacles should move.
@@ -81,7 +81,7 @@ class EndlessWorld extends World with TapCallbacks, HasGameReference {
       SpawnComponent(
         factory: (_) => Obstacle.random(
           random: _random,
-          canSpawnTall: level.canSpawnTall,
+          canSpawnFlying: level.canSpawnFlying,
         ),
         period: 5,
         area: Rectangle.fromPoints(
@@ -110,14 +110,14 @@ class EndlessWorld extends World with TapCallbacks, HasGameReference {
     // in, update the player's progress and open up a dialog that shows that
     // the player passed the level.
     scoreNotifier.addListener(() {
-      if (scoreNotifier.value >= level.winScore) {
+      if (scoreNotifier.value >= level.countRequired) {
         final levelTime = (DateTime.now().millisecondsSinceEpoch -
                 timeStarted.millisecondsSinceEpoch) /
             1000;
 
         levelCompletedIn = levelTime.round();
 
-        highScores.saveHighScore(level.number, levelCompletedIn);
+        playerProgress.setLevelFinished(level.number, levelCompletedIn);
         game.pauseEngine();
         game.overlays.add(GameScreen.winDialogKey);
       }

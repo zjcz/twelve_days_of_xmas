@@ -1,15 +1,15 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'high_scores_persistence.dart';
+import 'player_progress_persistence.dart';
 
-/// An implementation of [HighScoresPersistence] that uses
+/// An implementation of [PlayerProgressPersistence] that uses
 /// `package:shared_preferences`.
-class LocalStorageHighScoresPersistence extends HighScoresPersistence {
+class LocalStoragePlayerProgressPersistence extends PlayerProgressPersistence {
   final Future<SharedPreferences> instanceFuture =
       SharedPreferences.getInstance();
 
   @override
-  Future<List<int>> getHighScores() async {
+  Future<List<int>> getFinishedLevels() async {
     final prefs = await instanceFuture;
     final serialized = prefs.getStringList('levelsFinished') ?? [];
 
@@ -17,7 +17,7 @@ class LocalStorageHighScoresPersistence extends HighScoresPersistence {
   }
 
   @override
-  Future<void> saveHighScore(int level, int time) async {
+  Future<void> saveLevelFinished(int level, int time) async {
     final prefs = await instanceFuture;
     final serialized = prefs.getStringList('levelsFinished') ?? [];
     if (level <= serialized.length) {

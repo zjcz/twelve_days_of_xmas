@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../audio/audio_manager.dart';
 import '../level_selection/levels.dart';
-import '../high_scores/high_scores_controller.dart';
+import '../player_progress/player_progress_controller.dart';
 import 'components/background.dart';
 import 'endless_world.dart';
 
@@ -24,10 +24,10 @@ import 'endless_world.dart';
 class EndlessRunner extends FlameGame<EndlessWorld> with HasCollisionDetection {
   EndlessRunner({
     required this.level,
-    required HighScoresController highScores,
+    required PlayerProgressController playerProgress,
     required this.audioManager,
   }) : super(
-          world: EndlessWorld(level: level, highScores: highScores),
+          world: EndlessWorld(level: level, playerProgress: playerProgress),
           camera: CameraComponent.withFixedResolution(width: 1600, height: 720),
         );
 
@@ -55,7 +55,7 @@ class EndlessRunner extends FlameGame<EndlessWorld> with HasCollisionDetection {
       ),
     );
 
-    final scoreText = 'Embers: 0 / ${level.winScore}';
+    final scoreText = 'Gifts: 0 / ${level.countRequired}';
 
     // The component that is responsible for rendering the text that contains
     // the current score.

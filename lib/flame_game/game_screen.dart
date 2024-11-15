@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:nes_ui/nes_ui.dart';
 import '../service_locator.dart';
 
-import '../high_scores/high_scores_controller.dart';
+import '../player_progress/player_progress_controller.dart';
 import '../audio/audio_manager.dart';
 import '../level_selection/levels.dart';
 import 'endless_runner.dart';
@@ -32,7 +32,7 @@ class GameScreen extends ConsumerWidget {
         key: const Key('play session'),
         game: EndlessRunner(
           level: level,
-          highScores: ref.read(highScoresControllerProvider.notifier),
+          playerProgress: ref.read(playerProgressControllerProvider.notifier),
           audioManager: audioManager,
         ),
         overlayBuilderMap: {
