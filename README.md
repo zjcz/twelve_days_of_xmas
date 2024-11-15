@@ -1,16 +1,28 @@
-# twelve_days_of_xmas
+# 12 Days of Christmas
 
-A new Flutter project.
+Help Santa collect the gifts from the twelve days of Christmas
 
-## Getting Started
+Written in Flutter, based on the endless_runner template in the [Flutter Games repository](https://github.com/flutter/games)
 
-This project is a starting point for a Flutter application.
+## 🖥️ Instructions
 
-A few resources to get you started if this is your first Flutter project:
+To run the app you will need to install flutter. Follow this [Get Started](https://docs.flutter.dev/get-started/install) guide.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Clone the repository
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+git clone https://github.com/zjcz/twelve_days_of_xmas.git
+```
+
+- Install the dependencies
+
+```bash
+flutter pub get
+```
+
+- Start the emulator or connect a device
+- Run the application
+
+```bash
+flutter run
+```
