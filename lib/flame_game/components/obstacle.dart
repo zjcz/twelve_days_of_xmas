@@ -37,9 +37,9 @@ class Obstacle extends SpriteComponent with HasWorldReference<EndlessWorld> {
   factory Obstacle.random({
     Vector2? position,
     Random? random,
-    bool canSpawnTall = true,
+    bool canSpawnFlying = true,
   }) {
-    final values = canSpawnTall
+    final values = canSpawnFlying
         ? const [ObstacleType.small, ObstacleType.tall, ObstacleType.wide]
         : const [ObstacleType.small, ObstacleType.wide];
     final obstacleType = values.random(random);

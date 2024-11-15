@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nes_ui/nes_ui.dart';
+import 'package:twelve_days_of_xmas/route_config.dart';
 import '../service_locator.dart';
 
 import '../level_selection/levels.dart';
@@ -50,7 +51,7 @@ class GameWinDialog extends StatelessWidget {
             if (level.number < gameLevels.length) ...[
               NesButton(
                 onPressed: () {
-                  context.go('/play/session/${level.number + 1}');
+                  context.go('${RouteDefs.playLevel}${level.number + 1}');
                 },
                 type: NesButtonType.primary,
                 child: const Text('Next level'),
@@ -59,7 +60,7 @@ class GameWinDialog extends StatelessWidget {
             ],
             NesButton(
               onPressed: () {
-                context.go('/play');
+                context.go(RouteDefs.play);
               },
               type: NesButtonType.normal,
               child: const Text('Level selection'),

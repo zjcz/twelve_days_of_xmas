@@ -1,20 +1,20 @@
 import 'dart:core';
 
-import 'high_scores_persistence.dart';
+import 'player_progress_persistence.dart';
 
-/// An in-memory implementation of [HighScoresPersistence].
+/// An in-memory implementation of [PlayerProgressPersistence].
 /// Useful for testing.
-class MemoryHighScoresPersistence implements HighScoresPersistence {
+class MemoryPlayerProgressPersistence implements PlayerProgressPersistence {
   final levels = <int>[];
 
   @override
-  Future<List<int>> getHighScores() async {
+  Future<List<int>> getFinishedLevels() async {
     await Future<void>.delayed(const Duration(milliseconds: 500));
     return levels;
   }
 
   @override
-  Future<void> saveHighScore(int level, int time) async {
+  Future<void> saveLevelFinished(int level, int time) async {
     await Future<void>.delayed(const Duration(milliseconds: 500));
     if (level < levels.length - 1 && levels[level - 1] > time) {
       levels[level - 1] = time;
