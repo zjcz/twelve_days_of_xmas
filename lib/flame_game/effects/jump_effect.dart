@@ -1,7 +1,7 @@
 import 'package:flame/components.dart';
 import 'package:flame/effects.dart';
 import 'package:flutter/animation.dart';
-/// TODO - not needed, only here for compilation purposes
+
 /// The [JumpEffect] is simply a [MoveByEffect] which has the properties of the
 /// effect pre-defined.
 class JumpEffect extends MoveByEffect {
