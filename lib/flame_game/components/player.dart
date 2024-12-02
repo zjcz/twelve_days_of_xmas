@@ -50,7 +50,7 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
     // This defines the different animation states that the player can be in.
     animations = {
       PlayerState.running: await game.loadSpriteAnimation(
-        'dash/dash_running.png',
+        'santa/santa_running.png',
         SpriteAnimationData.sequenced(
           amount: 4,
           textureSize: Vector2.all(16),
@@ -58,11 +58,11 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
         ),
       ),
       PlayerState.jumping: SpriteAnimation.spriteList(
-        [await game.loadSprite('dash/dash_jumping.png')],
+        [await game.loadSprite('santa/santa_jumping.png')],
         stepTime: double.infinity,
       ),
       PlayerState.falling: SpriteAnimation.spriteList(
-        [await game.loadSprite('dash/dash_falling.png')],
+        [await game.loadSprite('santa/santa_falling.png')],
         stepTime: double.infinity,
       ),
     };
