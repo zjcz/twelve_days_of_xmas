@@ -68,8 +68,7 @@ class EndlessWorld extends World with TapCallbacks, HasGameReference {
     // calculate how long time it took to finish the level.
     timeStarted = DateTime.now();
 
-    // The player is the component that we control when we tap the screen, the
-    // Dash in this case.
+    // The player is the component that we control when we tap the screen
     player = Player(
       position: Vector2(-size.x / 3, groundLevel - 900),
       addScore: addScore,
@@ -94,7 +93,7 @@ class EndlessWorld extends World with TapCallbacks, HasGameReference {
 
     add(
       SpawnComponent.periodRange(
-        factory: (_) => Point(),
+        factory: (_) => Point(assetPath: level.giftType.imageAssetPath),
         minPeriod: 3.0,
         maxPeriod: 5.0 + level.number,
         area: Rectangle.fromPoints(
@@ -110,7 +109,7 @@ class EndlessWorld extends World with TapCallbacks, HasGameReference {
     // in, update the player's progress and open up a dialog that shows that
     // the player passed the level.
     scoreNotifier.addListener(() {
-      if (scoreNotifier.value >= level.countRequired) {
+      if (scoreNotifier.value >= level.giftType.countRequired) {
         final levelTime = (DateTime.now().millisecondsSinceEpoch -
                 timeStarted.millisecondsSinceEpoch) /
             1000;

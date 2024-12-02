@@ -63,7 +63,7 @@ class _InstructionsDialogState extends State<InstructionsDialog> {
                           width: 100,
                           height: 100,
                           child: SpriteAnimationWidget.asset(
-                            path: 'dash/dash_spritesheet.png',
+                            path: 'santa/santa_running.png',
                             data: SpriteAnimationData.sequenced(
                               amount: 3,
                               stepTime: 0.15,
@@ -97,11 +97,11 @@ class _InstructionsDialogState extends State<InstructionsDialog> {
                           width: 60,
                           height: 60,
                           child: SpriteAnimationWidget.asset(
-                            path: 'ember.png',
+                            path: 'gifts/ring.png',
                             data: SpriteAnimationData.sequenced(
                               amount: 4,
                               stepTime: 0.15,
-                              textureSize: Vector2.all(16),
+                              textureSize: Vector2.all(32),
                             ),
                           ),
                         ),

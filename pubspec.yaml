@@ -77,9 +77,10 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/images/dash/
+    - assets/images/santa/
     - assets/images/enemies/
     - assets/images/scenery/
+    - assets/images/gifts/
     - assets/music/
     - assets/sfx/
 

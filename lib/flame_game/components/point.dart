@@ -7,24 +7,26 @@ import '../endless_world.dart';
 /// to finish a level. The points are represented by Flame's mascot; Ember.
 class Point extends SpriteAnimationComponent
     with HasGameReference, HasWorldReference<EndlessWorld> {
-  Point() : super(size: spriteSize, anchor: Anchor.center);
+  final String assetPath;
 
-  static final Vector2 spriteSize = Vector2.all(100);
+  Point({required this.assetPath})
+      : super(size: spriteSize, anchor: Anchor.center);
+  static final Vector2 spriteSize = Vector2.all(75);
   final speed = 200;
 
   @override
   Future<void> onLoad() async {
     animation = await game.loadSpriteAnimation(
-      'ember.png',
+      assetPath,
       SpriteAnimationData.sequenced(
         amount: 4,
-        textureSize: Vector2.all(16),
+        textureSize: Vector2.all(32),
         stepTime: 0.15,
       ),
     );
     // Since the original Ember sprite is looking to the right we have to flip
     // it, so that it is facing the player instead.
-    flipHorizontallyAroundCenter();
+    //flipHorizontallyAroundCenter();
 
     // When adding a CircleHitbox without any arguments it automatically
     // fills up the size of the component as much as it can without overflowing
