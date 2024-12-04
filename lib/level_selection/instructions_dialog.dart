@@ -20,7 +20,7 @@ class _InstructionsDialogState extends State<InstructionsDialog> {
     return Column(
       children: [
         Text(
-          'Instructions',
+          'How to Play',
           style: TextStyle(
             fontFamily: GoogleFonts.pressStart2p().fontFamily,
             fontSize: 25,
@@ -76,7 +76,7 @@ class _InstructionsDialogState extends State<InstructionsDialog> {
                       const Flexible(
                         flex: 7,
                         child: Text(
-                          'Tap/click on the screen to jump in that direction, tap again to double jump.',
+                          'Tap/click on the screen to jump, tap again to double jump.',
                         ),
                       ),
                     ],
@@ -87,7 +87,7 @@ class _InstructionsDialogState extends State<InstructionsDialog> {
                       const Flexible(
                         flex: 7,
                         child: Text(
-                          'You have to save as many Embers as possible to clear the level.',
+                          'Collect the required number of gifts to complete the level.',
                         ),
                       ),
                       const SizedBox(width: 20),
@@ -124,7 +124,7 @@ class _InstructionsDialogState extends State<InstructionsDialog> {
                       const Flexible(
                         flex: 6,
                         child: Text(
-                          'Watch out for these, they will make you drop your Embers.',
+                          'Hitting an obstacle will make you drop all your gifts.',
                         ),
                       )
                     ],
